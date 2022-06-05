@@ -12,3 +12,4 @@ class Menu(db.Model):
     menu = db.Column(db.String(50), nullable=True)
     canteen = db.Column(db.String(50), nullable=True)
     date = db.Column(db.Date, nullable=True)
+    time = db.Column(db.String(20), nullable=True)
