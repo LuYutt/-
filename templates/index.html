@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="/static/北邮.jpg">
+    <h1 style="text-align:center">今天吃啥？</h1>
+    <h2 style="text-align:center">what would you like?</h2>
+   <table class="table table-striped" align="center" border="0.1" bordercolor="black">
+       <tr align="center">
+            <th>
+                <p>开放的餐厅:<p>
+                {%for i  in canteen%}
+                <li>{{i}}</li>
+                {% endfor %}
+            </th>
+            <th>
+                <p>就餐日期:<p>
+                {%for i  in date%}
+                <li>{{i}}</li>
+                {% endfor %}
+            </th>
+       </tr>
+   </table>
+
+    <form action="{{ url_for('choose')}}" method="POST" style="text-align:center" >
+        <p>餐厅: <input type="text" name="canteen" placeholder="请输入餐厅:如：D楼学生食堂三层"></p>
+        <p>日期： <input type="text" name="date" placeholder="请输入日期：如：2022-6-2"></p>
+        <p><input type="submit" value="提交"></p>
+    </form>
+
+</body>
+</html>

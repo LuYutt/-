@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+body {
+background: url("/static/2.jpg")no-repeat center fixed;
+background-repeat:no-repeat;
+background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+}
+</style>
+<body>
+    <h1 style="text-align:center">食堂菜谱</h1>
+    <table class="table table-striped" align="center" border="1" bordercolor="black">
+    <tr align="center">
+        <th>菜名</th>
+        <th>餐厅</th>
+        <th>日期</th>
+        <th>供餐时间</th>
+    </tr>
+    {%for i  in menus%}
+        <tr align="center">
+            <td>{{ i.menu }}</td>
+            <td>{{ i.canteen }}</td>
+            <td>{{ i.date }}</td>
+            <td>{{ i.time }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>
